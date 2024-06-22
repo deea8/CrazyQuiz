@@ -1,0 +1,100 @@
+﻿@model List<CrazyQuiz.Models.Quiz>
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@inherits Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<CrazyQuiz.Models.Quiz>>
+
+@{
+    ViewBag.Title = "Quizzes";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-image: url('/img/background-home.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Text alb pentru contrast */
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            font-size: 1.2em; /* Mărește dimensiunea fontului */
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #28a745; /* Verde pentru buton */
+            color: #fff; /* Text alb */
+            border: none;
+            padding: 5px 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block; /* Asigură afișarea ca buton */
+            margin: 5px 0; /* Margine între butoane */
+        }
+
+            .btn:hover {
+                background-color: #218838; /* Nuanță mai închisă de verde la hover */
+            }
+    </style>
+</head>
+<body>
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        <a asp-action="Create" class="btn">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Difficulty)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Difficulty)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.QuizId" class="btn">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.QuizId" class="btn">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.QuizId" class="btn">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

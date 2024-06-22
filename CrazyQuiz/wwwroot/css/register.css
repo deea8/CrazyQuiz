@@ -1,0 +1,21 @@
+﻿
+body {
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.register-card {
+    width: 80%; 
+    max-width: 400px;
+    border-radius: 15px; 
+}
+
+.form-floating .form-control {
+    border-radius: 15px; 
+}
+
+#registerSubmit {
+    border-radius: 15px; 
+}

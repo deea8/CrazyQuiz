@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/img/background-home.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .column.left, .column.right {
+            padding: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 column left">
+                <form>
+                    <div class="form-group mb-1">
+                        <label for="fname" class="mb-0">Prenume</label>
+                        <input type="text" class="form-control" id="fname" name="firstname" placeholder="Prenume">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname" class="mb-0">Nume</label>
+                        <input type="text" class="form-control" id="lname" name="lastname" placeholder="Numele de familie">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="mb-0">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="oras" class="mb-0">Oras</label>
+                        <select class="form-control" id="oras" name="oras">
+                            <option value="craiova">Craiova</option>
+                            <option value="bucuresti">Bucuresti</option>
+                            <option value="cluj">Cluj Napoca</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="mb-0">Subiect</label>
+                        <textarea class="form-control" id="subject" name="Subiect" placeholder="Subiect" rows="1"></textarea>
+
+                        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 column right">
+                <h4>Unde ne găsești?</h4>
+                <p>Strada Campia Islaz 9, Craiova, Dolj</p>
+                <img src="/img/harta.jpg" class="img-fluid " alt="Harta" />
+                <p>Email: CrazyQuiz@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

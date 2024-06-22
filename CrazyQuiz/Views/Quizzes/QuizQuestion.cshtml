@@ -1,0 +1,29 @@
+﻿@model CrazyQuiz.Models.Question
+
+@{
+    ViewData["Title"] = "Quiz Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Question @ViewBag.QuestionIndex of @ViewBag.TotalQuestions</h1>
+<p>@Model.Text</p>
+
+<form asp-controller="Quizzes" asp-action="ProcessAnswer" method="post">
+    <input type="hidden" name="questionId" value="@Model.QuestionId" />
+    <input type="hidden" name="quizResultId" value="@ViewBag.QuizResultId" />
+    @if (Model != null && Model.Answers != null)
+    {
+        @foreach (var answer in Model.Answers)
+        {
+            <div>
+                <input type="radio" id="answer_@answer.AnswerId" name="selectedAnswerId" value="@answer.AnswerId" />
+                <label for="answer_@answer.AnswerId">@answer.Text</label>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No answers available for this question.</p>
+    }
+    <button type="submit" class="btn btn-primary">Next</button>
+</form>

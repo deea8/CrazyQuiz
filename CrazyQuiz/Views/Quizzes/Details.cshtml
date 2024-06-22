@@ -1,0 +1,51 @@
+﻿@model CrazyQuiz.Models.Quiz
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@inherits Microsoft.AspNetCore.Mvc.Razor.RazorPage<CrazyQuiz.Models.Quiz>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Quiz</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Difficulty)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.QuizId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

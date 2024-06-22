@@ -1,0 +1,19 @@
+﻿@model CrazyQuiz.Models.QuizResult
+
+@{
+    ViewBag.Title = "Quiz Summary";
+}
+
+<h1>Quiz Summary</h1>
+
+<ul>
+    <li>Total Questions: @Model.TotalQuestions</li>
+    <li>Correct Answers: @Model.CorrectAnswers</li>
+    <li>Incorrect Answers: @Model.IncorrectAnswers</li>
+    <li>Score: @Model.Score</li>
+    <li>Completion Time: @Model.CompletionTime.ToString("yyyy-MM-dd HH:mm:ss")</li>
+</ul>
+
+<p>
+    @Html.ActionLink("Return to Dashboard", "Index", "Home")
+</p>

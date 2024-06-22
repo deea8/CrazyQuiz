@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CrazyQuiz.Models.ViewModels.LeaderboardResultViewModel>
+
+<h1>Leaderboard</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model.Select((value, i) => new { i, value }))
+        {
+            <tr>
+                <td>@(result.i + 1)</td>
+                <td>@result.value.UserName</td>
+                <td>@result.value.Score</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+﻿@model CrazyQuiz.ViewModels.AdminDashboardViewModel
+
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+<body style="background-image: url('/img/background-home.jpg'); background-size: cover; background-position: center;">
+
+    <div class="d-flex justify-content-center align-items-center" style="margin-top: 150px">
+        <div class="btn-group-vertical text-center">
+            <a asp-controller="Admin" asp-action="ManageQuestions" class="btn custom-btn btn-lg mb-3">Manage Questions</a>
+            <a asp-controller="Admin" asp-action="ManageAnswers" class="btn custom-btn btn-lg mb-3">Manage Answers</a>
+            <a asp-controller="Quizzes" asp-action="Index" class="btn custom-btn btn-lg mb-3">Manage Quizzes</a>
+            <a asp-controller="Categories" asp-action="Index" class="btn custom-btn btn-lg mb-3">Manage Categories</a>
+        </div>
+    </div>
+
+    <style>
+        .custom-btn {
+            background-color: #28a745; /* Verde */
+            color: #fff; /* Alb pentru text */
+            border: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+            .custom-btn:hover {
+                background-color: #218838; /* O nuanță mai închisă de verde */
+                color: #fff; /* Alb pentru text */
+            }
+    </style>
+</body>

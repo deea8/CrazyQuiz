@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CrazyQuiz.Models.Quiz>
+
+@{
+    ViewData["Title"] = ViewBag.SearchMode ? "Search Results" : "Quizzes by Category";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background-image: url('/img/background-home.jpg'); background-size: cover; background-position: center;">
+    <div class="container mt-4">
+        <h1>@ViewData["Title"]</h1>
+
+        @if (ViewBag.Message != null)
+        {
+            <p class="alert alert-info">@ViewBag.Message</p>
+        }
+
+        <div class="row">
+            @foreach (var quiz in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@quiz.Title</h5>
+                            <p class="card-text">@quiz.Description</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="@Url.Action("StartQuiz", "Quizzes", new { id = quiz.QuizId })" class="btn btn-primary">Start Quiz</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

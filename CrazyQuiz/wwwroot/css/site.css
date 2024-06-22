@@ -1,0 +1,101 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+/*
+body {
+  margin-bottom: 60px;
+}*/
+
+/* Stiluri personalizate pentru nav-bar */
+.navbar {
+    background-color: #333; /* Schimbă culoarea de fundal */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff; /* Schimbă culoarea textului */
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #ccc; /* Schimbă culoarea textului la hover */
+    }
+
+.navbar-toggler-icon {
+    background-color: #fff; /* Schimbă culoarea iconiței de toggle */
+}
+
+.dropdown-menu {
+    background-color: #333; /* Schimbă culoarea de fundal a meniului dropdown */
+}
+
+.dropdown-item {
+    color: #fff; /* Schimbă culoarea textului din meniul dropdown */
+}
+
+    .dropdown-item:hover {
+        background-color: #555; /* Schimbă culoarea de fundal la hover în meniul dropdown */
+        color: #fff; /* Schimbă culoarea textului la hover în meniul dropdown */
+    }
+
+.bg-custom {
+    background-color: #a0b7d1;
+}
+
+.card {
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+}
+
+.container-quiz {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quiz-preview {
+    text-align: center;
+}
+
+    .quiz-preview img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.quiz-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.btn-start-quiz {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-start-quiz:hover {
+        background-color: #0056b3;
+    }
+
+.bg-custom {
+    background-color: #a0b7d1;
+}
